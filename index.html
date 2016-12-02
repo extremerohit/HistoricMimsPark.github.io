@@ -12,7 +12,9 @@
 
         <a-scene physics>
         <!-- physics -->
-        	<a-entity camera universal-controls kinematic-body jump-ability="enableDoubleJump: true; distance: 3;" position="0 1.2 8">
+        	<a-entity camera="userHeight: 2" universal-controls kinematic-body jump-ability ="enableDoubleJump: true; distance: 3;" position="0 1 3"> 
+                <!--while creating: camera="userHeight: 1.6" universal-controls rotation=" -50 330 0"  position="-20 70 -30"  -->
+                <!--while demo: camera universal-controls kinematic-body jump-ability ="enableDoubleJump: true; distance: 3;" position="0 3.2 3"-->
 				<a-entity id="cursor" cursor="fuse: true; maxDistance: 3.5" geometry="primitive: sphere; radius:1;" material="color: red; opacity: 0;" position="0 0 -0.69"></a-entity>
 			</a-entity>
 
@@ -25,6 +27,29 @@
 			</a-assets>
 
 
+            <!-- World Map Satellite -->
+            <a-entity geometry="primitive: plane; height: 418; width: 578" position="99 -0.1 -143" rotation="-90 0 0" material="shader: flat; side: double; transparent: true; src:url(images/area aerial.png); opacity: 1"></a-entity>
+             
+            
+
+
+            <!--Grid 
+
+
+            <a-box position ="75 1 0" height="1" width="250" depth="1" color ="red"></a-box>
+            <a-box position ="0 10 0" height="20" width="1" depth="1" color ="green"></a-box>
+            <a-box position ="0 0 -100" height="1" width="1" depth="300" color ="blue"></a-box>
+                        
+            <a-box position ="50.5 1 -100" height=" 1" width =" 1" depth =" 300" color ="grey"></a-box>
+            <a-box position ="100.5 1 -100" height=" 1" width =" 2" depth =" 300" color ="black"></a-box>
+            <a-box position ="150.5 1 -100" height=" 1" width =" 1" depth =" 300" color ="grey"></a-box>
+
+            <a-box position ="50 1 50.5" height=" 1" width ="200" depth ="1" color ="grey"></a-box>
+            <a-box position ="50 1 -50.5" height=" 1" width ="200" depth ="1" color ="grey"></a-box>
+            <a-box position ="50 1 -100.5" height=" 1" width ="200" depth ="2" color ="black"></a-box>
+            <a-box position ="50 1 -150.5" height=" 1" width ="200" depth ="1" color ="grey"></a-box>
+
+            -->
 
 			<!-- sky -->
 			<a-sky src="images/sky.jpg"></a-sky>
@@ -32,9 +57,37 @@
 			<!-- ground 1/2-->
 			<a-entity static-body geometry="primitive: box; depth: 103; height: 0.14; width: 367" position="0 0 -142" rotation="0 90 0" material="shader: flat; side: double; src: url(images/grass.jpg); repeat: 20 20"></a-entity>
 		<!-- ================================================================================== -->
-		<!-- AREA 1 -->
+
+            <!-- AREA 1 -->
 		<!-- trees -->
 		
+            <!-- middle house  -->
+          <a-entity position="0 1.5 -60" rotation="270 90 0" geometry="primitive: cylinder; height: 14; radius:3; segmentsRadial: 6" material="color: #D2B48C">
+          	<!-- left roof -->
+          	<a-entity geometry="primitive: box; width: 3.75; height: 15; depth: .2" position="1.6 0 2.25" rotation="0 30 0" material="side: double; color: #9d6055; repeat: 3.5 5"></a-entity>
+          	<!-- right roof -->
+          	<a-entity geometry="primitive: box; width: 3.75; height: 15; depth: .2" position="-1.6 0 2.25" rotation="0 -30 0" material="side: double; color: #9d6055; repeat: 3.5 5"></a-entity>
+          </a-entity>
+
+            <!-- left house-->
+          <a-entity position="-38 1.5 -66" rotation="270 90 0" geometry="primitive: cylinder; height: 14; radius:3; segmentsRadial: 6" material="color: #D2B48C">
+          	<!-- left roof -->
+          	<a-entity geometry="primitive: box; width: 3.75; height: 15; depth: .2" position="1.6 0 2.25" rotation="0 30 0" material="side: double; color: #343434; repeat: 3.5 5"></a-entity>
+          	<!-- right roof -->
+          	<a-entity geometry="primitive: box; width: 3.75; height: 15; depth: .2" position="-1.6 0 2.25" rotation="0 -30 0" material="side: double; color: #343434; repeat: 3.5 5"></a-entity>
+          </a-entity>
+
+            <!-- right house-->
+          <a-entity position="35 1.5 -66" rotation="270 90 0" geometry="primitive: cylinder; height: 14; radius:3; segmentsRadial: 6" material="color: #D2B48C">
+          	<!-- left roof -->
+          	<a-entity geometry="primitive: box; width: 3.75; height: 15; depth: .2" position="1.6 0 2.25" rotation="0 30 0" material="side: double; color: #343434; repeat: 3.5 5"></a-entity>
+          	<!-- right roof -->
+          	<a-entity geometry="primitive: box; width: 3.75; height: 15; depth: .2" position="-1.6 0 2.25" rotation="0 -30 0" material="side: double; color: #343434; repeat: 3.5 5"></a-entity>
+          </a-entity>
+
+            <!-- Pantheon circle -->
+            <a-entity position="0 .16 -75" rotation="90 0 0" geometry="primitive: circle; radius: 10" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
+
 			<!-- actually area 2 trees -->
 			<a-entity position="-13 2.5 -13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 			<a-entity position="13 2.5 13" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
@@ -63,7 +116,7 @@
 			<a-entity position="8 0 19" rotation="0 270 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
 			<a-entity position="8 0 31" rotation="0 270 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
 
-
+           
 		<!-- TOP GRAVEL AREA -->
 			<a-entity static-body geometry="primitive: box; width: 82.5; height: 11; depth: .15" position=".75 0 -319.5" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 50 3.5"></a-entity>
 
@@ -77,6 +130,18 @@
 			<a-entity geometry="primitive: box; width: 5; height: 145; depth: .15" position="0 0 -175" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 3.5 50">
 				<!-- TREES FOR AREA 1 REFERENCE -->
 				<!-- left of the bisecting path -->
+
+                <!--very top left corner of seven-->
+                <a-entity position="-5.5 -140 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-15.5 -140 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-25.5 -140 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="-35 -138 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="-35.5 -124 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="-35.5 -110 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="-35.5 -96 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="-35.5 -83 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity static-body geometry="primitive: box; width: 30; height: 46; depth: .15" position="-16 -108 -0.5" material="side: double; src:url(images/tree farm.png); repeat: 30 3.5"></a-entity>
+
 				<a-entity position="-5.5 -68 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 				<a-entity position="-15.5 -68 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 				<a-entity position="-25.5 -68 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
@@ -116,6 +181,17 @@
 				<!-- benches -->
 				<a-entity position="1.7 0 0" rotation="0 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
 				<a-entity position="3.2 0 0" rotation="180 270 90" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
+
+                <!-- very top corner of 8 -->
+                <a-entity position="8.5 -140 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="18.5 -140 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="28.5 -140 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+				<a-entity position="38.5 -138 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="38.5 -124 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="38.5 -110 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="38.5 -96 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity position="38.5 -82 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity static-body geometry="primitive: box; width: 30; height: 46; depth: .15" position="19 -108 -0.5" rotation="0 0 0" material="side: double; src:url(images/tree farm.png); repeat: 30 3.5"></a-entity>
 
 				<!-- top set of 4 -->
 				<a-entity position="8.5 -70 -2.5" scale="1.5 1.5 1.5" rotation="-90 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
@@ -300,8 +376,8 @@
 		<!-- ================================================================================== -->
 		<!-- AREA 2 -->
 			<!-- map backing and front-->
-        	<a-entity static-body geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 1.99" rotation="0 180 0" material="shader: flat; transparent: true; color: #000"></a-entity>
-			<a-entity geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 2" material="shader: flat; side: double; transparent: true; src:url(images/Map2.jpg); opacity: 1">
+        	<a-entity static-body geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 5.99"  material="shader: flat; side: double; transparent: true; src:url(images/Map2.jpg)></a-entity>
+			<a-entity geometry="primitive: plane; height: 5.065; width: 4.195" position="0 2.5 6" material="shader: flat; side: double; transparent: true; src:url(images/Map2.jpg); opacity: 1">
 				<!-- you are here sphere -->
 				<a-cylinder position="-.63 -1.35 .15" radius=".05" height=".3" rotation="90 0 0" color="blue"></a-cylinder>
 			</a-entity>
@@ -309,10 +385,10 @@
 			<!-- main start circle AKA origin -->
             <a-entity geometry="primitive: circle; radius: 15" position="0 .1 0" rotation="90 0 0" material="side: double; src:url(images/gravel.jpg); repeat: 10 10"></a-entity>
 
-            <!-- PARK BENCH!!!!!! -->
+            <!-- PARK BENCH!!!!!!
             <a-entity position="0 0 8" rotation="0 180 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
             <a-entity position="0 0 9.5" rotation="0 0 0" scale="1.35 1.35 1.35" obj-model="obj: #bench-obj; mtl: #bench-mtl"></a-entity>
-
+            -->
             <!-- trees -->
             <!-- trees by the statue stand -->
             <a-entity position="10 2.5 -60" rotation="0 0 0" scale="1.5 1.5 1.5" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
@@ -354,24 +430,24 @@
             </a-entity> -->
 
       
-            <!-- roads -->
+ <!-- roads -->
             <!-- right of 1 and 2 VINE ST NW/SW-->
-            <a-entity static-body geometry="primitive: box; width: 11; height: 367; depth: .15" position="57.5 0 -142" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 11; height: 367; depth: .15" position="57.5 0.12 -142" rotation="90 0 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
 
             <!-- WALNUT ST NW -->
-            <a-entity static-body geometry="primitive: box; width: 10; height: 280; depth: .15" position="190 0 -196" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 10; height: 280; depth: .15" position="190 0.12 -196" rotation="90 0 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
 
             <!-- left of 1 and 2 ELM ST NW-->
-            <a-entity static-body geometry="primitive: box; width: 10; height: 367; depth: .15" position="-55.5 .12 -142" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 10; height: 367; depth: .15" position="-55.5 .12 -142" rotation="90 0 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
 
             <!-- diagonal between 1 and 2 THURMOND ST-->
-            <a-entity geometry="primitive: box; width: 10; height: 120; depth: .17" position="0 0 -76" rotation="90 75 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity geometry="primitive: box; width: 10; height: 120; depth: .17" position="0 0.12 -76" rotation="90 85 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
 
             <!-- THURMOND STREET NW-->
-            <a-entity static-body geometry="primitive: box; width: 130; height: 10; depth: .15" position="125 0 -61" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 130; height: 10; depth: .15" position="125 0.12 -61" rotation="90 0 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
 
             <!-- Rock St NW -->
-            <a-entity geometry="primitive: box; width: 123; height: 11; depth: .14" position="124 0 -170" rotation="90 0 0" material="side: double; repeat: 50 3.5; src:url(images/gravel.jpg)">
+            <a-entity geometry="primitive: box; width: 123; height: 11; depth: .14" position="124 0.12 -170" rotation="90 0 0" material="side: double; repeat: 50 3.5; src:url(images/gravel.jpg)">
             </a-entity>
             <!-- bridge over lake for rock street -->
             <!-- steps for the bridge left -->
@@ -401,7 +477,7 @@
 
 
             <!-- TYLER ST NW -->
-            <a-entity static-body geometry="primitive: box; width: 130; height: 11; depth: .15" position="125 0 -250" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 130; height: 11; depth: .15" position="125 0.12 -250" rotation="90 0 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
             <!-- bridge over lake for TYLER street -->
             <!-- steps for TYLER bridge left -->
             <a-entity static-body geometry="primitive: box; width: 1; height: 5; depth: .5" position="72 0 -250" rotation="90 0 0" material="side: double; color: #b7b2af; repeat: 3.5 5"></a-entity>
@@ -431,10 +507,10 @@
 
 
             <!-- JOSEPH E. BOONE BLVD NW -->
-            <a-entity static-body geometry="primitive: box; width: 250; height: 11; depth: .15" position="64.5 0 -330.5" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 250; height: 11; depth: .15" position="64.5 0.12 -330.5" rotation="90 0 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
 
             <!-- SPENCER ST NW -->
-            <a-entity static-body geometry="primitive: box; width: 123; height: 10; depth: .15" position="1 0 46.5" rotation="90 0 0" material="side: double; color: grey; repeat: 3.5 50"></a-entity>
+            <a-entity static-body geometry="primitive: box; width: 123; height: 10; depth: .15" position="1 0.12 46.5" rotation="90 0 0" material="side: double; src:url(images/asphalt.jpg); repeat: 5 5"></a-entity>
 
 
 
